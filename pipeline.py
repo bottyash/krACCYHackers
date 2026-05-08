@@ -49,11 +49,15 @@ def retrieve_protocol(state):
     return state
     
 def researcher_worker(state):
-   
+    p, v = state["patient"], state["patient"]["labs"]["clinical_scores"]["scores_text"]["protocol_context"]["researcher_summary"]["writer_report"]["final_output"]
+    lab_lines = "\n".join(f"  {l['test']}: {l['value']} {l['unit']} [{l['flag']}]" for l in state["labs"])
     prompt = f"""You are a nurse researcher. Produce a concise clinical summary (max 200 words)."""
+    
     return state
     
 def writer_worker(state):
+    p, v = state["patient"], state["patient"]["vitals"]
+    lab_lines = "\n".join(f"  {l['test']}: {l['value']} {l['unit']} [{l['flag']}]" for l in state["labs"])
     
     prompt = f""" You are a senior physician. Assign priority using all data given. Respond in VALID JSON only"""
     return state

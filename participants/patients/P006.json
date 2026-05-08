@@ -1,0 +1,25 @@
+{
+  "patient_id": "P006",
+  "name": "Mohan Iyer",
+  "age": 72,
+  "gender": "M",
+  "arrival_time": "10:38",
+  "chief_complaint": "Sudden right-sided weakness and slurred speech onset 45 minutes ago while eating breakfast.",
+  "symptom_onset_minutes": 45,
+  "vitals": {
+    "bp_systolic": 174,
+    "bp_diastolic": 98,
+    "heart_rate": 88,
+    "spo2": 95,
+    "temperature_c": 36.9,
+    "respiratory_rate": 20,
+    "gcs": 13
+  },
+  "history": {
+    "known_conditions": ["atrial_fibrillation", "hypertension", "hyperlipidemia"],
+    "medications": ["warfarin", "bisoprolol", "rosuvastatin"],
+    "allergies": [],
+    "last_hospitalization": "2021-03-08"
+  },
+  "notes": "FAST positive: facial droop right side, right arm drift, dysarthria. Last known well 45 min ago. INR not known. Within thrombolysis window. Needs urgent CT."
+}

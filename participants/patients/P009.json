@@ -1,0 +1,25 @@
+{
+  "patient_id": "P009",
+  "name": "Deepa Varma",
+  "age": 29,
+  "gender": "F",
+  "arrival_time": "12:20",
+  "chief_complaint": "Severe lower abdominal pain and vaginal bleeding. LMP 7 weeks ago. Positive home pregnancy test last week.",
+  "symptom_onset_minutes": 90,
+  "vitals": {
+    "bp_systolic": 96,
+    "bp_diastolic": 62,
+    "heart_rate": 118,
+    "spo2": 98,
+    "temperature_c": 36.6,
+    "respiratory_rate": 22,
+    "gcs": 15
+  },
+  "history": {
+    "known_conditions": [],
+    "medications": ["folic_acid"],
+    "allergies": [],
+    "last_hospitalization": null
+  },
+  "notes": "Cervical motion tenderness on exam. Significant adnexal tenderness right side. BP trending down since arrival. Serum beta-hCG sent. High suspicion for ectopic pregnancy. OB-GYN called."
+}

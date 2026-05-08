@@ -1,0 +1,25 @@
+{
+  "patient_id": "P005",
+  "name": "Kavya Reddy",
+  "age": 6,
+  "gender": "F",
+  "arrival_time": "10:05",
+  "chief_complaint": "Child brought by father — high fever, stiff neck, rash on torso and legs appearing over last 2 hours.",
+  "symptom_onset_minutes": 120,
+  "vitals": {
+    "bp_systolic": 84,
+    "bp_diastolic": 52,
+    "heart_rate": 148,
+    "spo2": 94,
+    "temperature_c": 39.8,
+    "respiratory_rate": 32,
+    "gcs": 12
+  },
+  "history": {
+    "known_conditions": [],
+    "medications": [],
+    "allergies": [],
+    "last_hospitalization": null
+  },
+  "notes": "Non-blanching petechial rash on trunk and lower limbs. Kernig's sign positive. Child irritable and difficult to console. Father says rash was not there 2 hours ago. Hypotensive for age."
+}

@@ -1,0 +1,25 @@
+{
+  "patient_id": "P003",
+  "name": "Ramesh Kulkarni",
+  "age": 54,
+  "gender": "M",
+  "arrival_time": "09:02",
+  "chief_complaint": "Sudden severe headache — worst of life. Onset while straining at toilet, 1 hour ago. Vomited twice.",
+  "symptom_onset_minutes": 60,
+  "vitals": {
+    "bp_systolic": 188,
+    "bp_diastolic": 112,
+    "heart_rate": 96,
+    "spo2": 97,
+    "temperature_c": 37.1,
+    "respiratory_rate": 18,
+    "gcs": 13
+  },
+  "history": {
+    "known_conditions": ["hypertension"],
+    "medications": ["amlodipine"],
+    "allergies": [],
+    "last_hospitalization": null
+  },
+  "notes": "Photophobic. Neck stiffness on examination. Thunderclap headache pattern. No focal neurological deficit currently but GCS declining since arrival."
+}

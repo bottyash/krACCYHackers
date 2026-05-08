@@ -1,0 +1,25 @@
+{
+  "patient_id": "P004",
+  "name": "Sunita Desai",
+  "age": 41,
+  "gender": "F",
+  "arrival_time": "09:33",
+  "chief_complaint": "Right ankle pain and swelling after twisting it on stairs, 3 hours ago. Can bear weight with difficulty.",
+  "symptom_onset_minutes": 180,
+  "vitals": {
+    "bp_systolic": 122,
+    "bp_diastolic": 80,
+    "heart_rate": 78,
+    "spo2": 99,
+    "temperature_c": 36.7,
+    "respiratory_rate": 15,
+    "gcs": 15
+  },
+  "history": {
+    "known_conditions": [],
+    "medications": ["ibuprofen_prn"],
+    "allergies": [],
+    "last_hospitalization": null
+  },
+  "notes": "Right ankle lateral malleolus tenderness. Mild swelling. Ottawa rules: tenderness over posterior distal fibula. X-ray indicated. Patient comfortable at rest."
+}

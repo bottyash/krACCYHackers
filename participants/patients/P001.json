@@ -1,0 +1,25 @@
+{
+  "patient_id": "P001",
+  "name": "Arjun Mehta",
+  "age": 67,
+  "gender": "M",
+  "arrival_time": "08:14",
+  "chief_complaint": "Crushing chest pain radiating to left arm, started 35 minutes ago. Sweating profusely.",
+  "symptom_onset_minutes": 35,
+  "vitals": {
+    "bp_systolic": 92,
+    "bp_diastolic": 60,
+    "heart_rate": 112,
+    "spo2": 91,
+    "temperature_c": 36.8,
+    "respiratory_rate": 24,
+    "gcs": 14
+  },
+  "history": {
+    "known_conditions": ["hypertension", "type2_diabetes", "previous_MI_2019"],
+    "medications": ["metformin", "atorvastatin", "aspirin"],
+    "allergies": ["penicillin"],
+    "last_hospitalization": "2019-11-12"
+  },
+  "notes": "Patient is pale, diaphoretic. Wife reports he almost lost consciousness in the car. ECG strip shows ST elevation in leads II, III, aVF."
+}

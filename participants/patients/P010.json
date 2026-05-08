@@ -1,0 +1,25 @@
+{
+  "patient_id": "P010",
+  "name": "Suresh Pillai",
+  "age": 60,
+  "gender": "M",
+  "arrival_time": "13:05",
+  "chief_complaint": "Mild shortness of breath on exertion for 1 week. No chest pain at rest. Slight ankle swelling.",
+  "symptom_onset_minutes": 10080,
+  "vitals": {
+    "bp_systolic": 142,
+    "bp_diastolic": 88,
+    "heart_rate": 94,
+    "spo2": 93,
+    "temperature_c": 36.9,
+    "respiratory_rate": 20,
+    "gcs": 15
+  },
+  "history": {
+    "known_conditions": ["heart_failure_diagnosed_2022", "CKD_stage3", "hypertension"],
+    "medications": ["furosemide", "lisinopril", "carvedilol"],
+    "allergies": [],
+    "last_hospitalization": "2023-09-14"
+  },
+  "notes": "Bilateral basal crackles on auscultation. Pitting oedema ankles +++. JVP elevated. SpO2 93% on room air. Known heart failure patient, appears to be decompensating. Not in acute distress but requires monitoring."
+}

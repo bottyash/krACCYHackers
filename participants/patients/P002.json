@@ -1,0 +1,25 @@
+{
+  "patient_id": "P002",
+  "name": "Priya Nair",
+  "age": 28,
+  "gender": "F",
+  "arrival_time": "08:47",
+  "chief_complaint": "Mild sore throat, low grade fever for 2 days. No difficulty swallowing.",
+  "symptom_onset_minutes": 2880,
+  "vitals": {
+    "bp_systolic": 118,
+    "bp_diastolic": 76,
+    "heart_rate": 84,
+    "spo2": 99,
+    "temperature_c": 37.9,
+    "respiratory_rate": 16,
+    "gcs": 15
+  },
+  "history": {
+    "known_conditions": [],
+    "medications": [],
+    "allergies": [],
+    "last_hospitalization": null
+  },
+  "notes": "Alert, comfortable. Pharynx mildly erythematous. No tonsillar exudate. No rash. Last ate this morning. Walked in independently."
+}

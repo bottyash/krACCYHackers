@@ -1,0 +1,25 @@
+{
+  "patient_id": "P007",
+  "name": "Fatima Sheikh",
+  "age": 35,
+  "gender": "F",
+  "arrival_time": "11:10",
+  "chief_complaint": "Burning urination, increased frequency for 3 days. No fever. No flank pain.",
+  "symptom_onset_minutes": 4320,
+  "vitals": {
+    "bp_systolic": 116,
+    "bp_diastolic": 74,
+    "heart_rate": 76,
+    "spo2": 99,
+    "temperature_c": 37.0,
+    "respiratory_rate": 14,
+    "gcs": 15
+  },
+  "history": {
+    "known_conditions": [],
+    "medications": [],
+    "allergies": ["sulfa_drugs"],
+    "last_hospitalization": null
+  },
+  "notes": "Alert and comfortable. Suprapubic tenderness mild. No costovertebral angle tenderness. Urine dipstick: nitrites positive, leukocytes 3+. Likely uncomplicated UTI. Allergy to sulfa drugs noted."
+}

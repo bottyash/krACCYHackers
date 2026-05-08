@@ -27,3 +27,10 @@ def load_patients(patient_filter=None) -> list[dict]:
             continue
         patients.append(p)
     return patients
+
+def print_result(r: dict):
+    print(f"\n{'─'*60}")
+    print(f" {r['patient_id']} → {r.get('priority','?')}  (confidence: {r.get('confidence', 0):.0%})")
+    print(f"   Signals : {', '.join(r.get('key_signals', []))}")
+    print(f"   Reason  : {r.get('reasoning','')[:120]}...")
+    print(f"{'─'*40}")

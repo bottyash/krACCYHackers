@@ -10,9 +10,6 @@ PATIENTS_DIR = "../participants/patients"
 LABS_CSV     = "../participants/labs.csv"
 OUTPUT_FILE  = "./results.json"
 
-PRIORITY_EMOJI = {"P1": "🔴", "P2": "🟠", "P3": "🟡", "P4": "🟢"}
-
-
 def load_labs() -> dict[str, list[dict]]:
     """Load labs.csv and group by patient_id."""
     labs = {}
@@ -22,4 +19,11 @@ def load_labs() -> dict[str, list[dict]]:
             labs.setdefault(pid, []).append(row)
     return labs
 
-
+def load_patients(patient_filter=None) -> list[dict]:
+    patients = []
+    for path in sorted(Path(PATIENTS_DIR).glob("*.json")):
+        p = json.loads(path.read_text())
+        if patient_filter and p["patient_id"] != patient_filter:
+            continue
+        patients.append(p)
+    return patients

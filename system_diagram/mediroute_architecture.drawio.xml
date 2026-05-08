@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <mxfile host="app.diagrams.net" agent="Claude">
   <diagram name="MediRoute Architecture" id="mediroute-main">
-    <mxGraphModel dx="1030" dy="574" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="1471" dy="820" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -12,10 +12,10 @@
           <mxGeometry height="70" width="180" x="110" y="150" as="geometry" />
         </mxCell>
         <mxCell id="in-labs" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;arcSize=12;" value="&lt;b&gt;labs.csv&lt;/b&gt;&lt;br&gt;test · value · unit&lt;br&gt;flag (CRITICAL / HIGH)" vertex="1">
-          <mxGeometry height="70" width="180" x="400" y="130" as="geometry" />
+          <mxGeometry height="70" width="180" x="330" y="150" as="geometry" />
         </mxCell>
         <mxCell id="in-protocol" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;arcSize=12;" value="&lt;b&gt;triage_protocol.md&lt;/b&gt;&lt;br&gt;P1/P2/P3/P4 rules&lt;br&gt;Sepsis · FAST · AVPU" vertex="1">
-          <mxGeometry height="70" width="180" x="918" y="120" as="geometry" />
+          <mxGeometry height="70" width="180" x="1050" y="110" as="geometry" />
         </mxCell>
         <mxCell id="ingest-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9f0ff;strokeColor=#9673a6;dashed=1;dashPattern=6 3;arcSize=8;" value="" vertex="1">
           <mxGeometry height="120" width="450" x="780" y="244" as="geometry" />
@@ -27,7 +27,7 @@
           <mxGeometry height="61" width="120" x="1080" y="279" as="geometry" />
         </mxCell>
         <mxCell id="chromadb" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" value="&lt;b&gt;ChromaDB&lt;/b&gt;&lt;br&gt;Local vector store&lt;br&gt;(persistent)" vertex="1">
-          <mxGeometry height="70" width="120" x="788" y="269" as="geometry" />
+          <mxGeometry height="70" width="120" x="800" y="274.5" as="geometry" />
         </mxCell>
         <mxCell id="e-ingest" edge="1" parent="1" source="chunker" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;fontStyle=2;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" target="chromadb" value="embed&lt;br&gt;all-MiniLM-L6-v2">
           <mxGeometry relative="1" as="geometry">
@@ -38,61 +38,72 @@
           <mxGeometry height="80" width="180" x="160" y="470" as="geometry" />
         </mxCell>
         <mxCell id="n2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;arcSize=12;" value="&lt;b&gt;Node 2&lt;/b&gt;&lt;br&gt;Researcher Worker&lt;br&gt;&lt;font style=&#39;font-size:10px;color:#555&#39;&gt;consolidate vitals · labs · history&lt;/font&gt;" vertex="1">
-          <mxGeometry height="80" width="180" x="430" y="470" as="geometry" />
+          <mxGeometry height="80" width="180" x="584" y="476" as="geometry" />
         </mxCell>
         <mxCell id="n3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;arcSize=12;" value="&lt;b&gt;Node 3&lt;/b&gt;&lt;br&gt;Writer Worker&lt;br&gt;&lt;font style=&#39;font-size:10px;color:#555&#39;&gt;assign P1–P4 · confidence · JSON&lt;/font&gt;" vertex="1">
-          <mxGeometry height="80" width="180" x="740" y="470" as="geometry" />
+          <mxGeometry height="80" width="180" x="904" y="476" as="geometry" />
         </mxCell>
+        <object label="Fallback when writer accuracy &amp;lt;75%" Fallback="" id="IzWHGnMuoi9qaBZG2Nb3-2">
+          <mxCell edge="1" parent="1" source="n4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;dashed=1;textDirection=vertical-rl;" target="n2">
+            <mxGeometry relative="1" x="-0.2404" as="geometry">
+              <mxPoint y="1" as="offset" />
+              <Array as="points">
+                <mxPoint x="469" y="733" />
+                <mxPoint x="469" y="536" />
+              </Array>
+            </mxGeometry>
+          </mxCell>
+        </object>
         <mxCell id="n4" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=12;arcSize=12;" value="&lt;b&gt;Node 4&lt;/b&gt;&lt;br&gt;Parser / Validator&lt;br&gt;&lt;font style=&#39;font-size:10px;color:#555&#39;&gt;validate JSON · fallback on error&lt;/font&gt;" vertex="1">
-          <mxGeometry height="80" width="180" x="430" y="678" as="geometry" />
+          <mxGeometry height="80" width="180" x="494" y="693" as="geometry" />
         </mxCell>
         <mxCell id="llm" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=12;arcSize=12;" value="&lt;b&gt;Ollama LLM&lt;/b&gt;&lt;br&gt;qwen3.5/4b&lt;div&gt;temp=0.1 (offline)&lt;/div&gt;" vertex="1">
-          <mxGeometry height="80" width="180" x="870" y="598" as="geometry" />
+          <mxGeometry height="80" width="180" x="994" y="610" as="geometry" />
         </mxCell>
         <mxCell id="embedder" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=12;arcSize=12;" value="&lt;b&gt;sentence-transformers&lt;/b&gt;&lt;br&gt;all-MiniLM-L6-v2&lt;br&gt;384-dim vectors" vertex="1">
           <mxGeometry height="80" width="180" x="160" y="620" as="geometry" />
         </mxCell>
         <mxCell id="output" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=12;arcSize=12;" value="&lt;b&gt;results.json&lt;/b&gt;&lt;br&gt;priority · confidence&lt;br&gt;key_signals · reasoning&lt;br&gt;worker_trace" vertex="1">
-          <mxGeometry height="80" width="180" x="430" y="940" as="geometry" />
+          <mxGeometry height="80" width="180" x="479" y="946" as="geometry" />
         </mxCell>
         <mxCell id="leg-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;arcSize=8;" value="" vertex="1">
-          <mxGeometry height="200" width="200" x="1160" y="420" as="geometry" />
+          <mxGeometry height="200" width="200" x="1209" y="426" as="geometry" />
         </mxCell>
         <mxCell id="leg-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=13;" value="&lt;b&gt;Priority Levels&lt;/b&gt;" vertex="1">
-          <mxGeometry height="24" width="200" x="1160" y="430" as="geometry" />
+          <mxGeometry height="24" width="200" x="1209" y="436" as="geometry" />
         </mxCell>
         <mxCell id="leg-p1" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffcccc;align=left;fontSize=11;rounded=1;" value="&amp;nbsp;P1 — Immediate (0–10 min)" vertex="1">
-          <mxGeometry height="28" width="176" x="1172" y="462" as="geometry" />
+          <mxGeometry height="28" width="176" x="1226" y="468" as="geometry" />
         </mxCell>
         <mxCell id="leg-p2" parent="1" style="text;html=1;strokeColor=none;fillColor=#ffe6cc;align=left;fontSize=11;rounded=1;" value="&amp;nbsp;P2 — Urgent (10–30 min)" vertex="1">
-          <mxGeometry height="28" width="176" x="1172" y="498" as="geometry" />
+          <mxGeometry height="28" width="176" x="1226" y="504" as="geometry" />
         </mxCell>
         <mxCell id="leg-p3" parent="1" style="text;html=1;strokeColor=none;fillColor=#fffacc;align=left;fontSize=11;rounded=1;" value="&amp;nbsp;P3 — Less Urgent (30–60 min)" vertex="1">
-          <mxGeometry height="28" width="176" x="1172" y="534" as="geometry" />
+          <mxGeometry height="28" width="176" x="1226" y="540" as="geometry" />
         </mxCell>
         <mxCell id="leg-p4" parent="1" style="text;html=1;strokeColor=none;fillColor=#d5e8d4;align=left;fontSize=11;rounded=1;" value="P4 — Non-Urgent (&amp;gt;60 min)" vertex="1">
-          <mxGeometry height="28" width="176" x="1172" y="570" as="geometry" />
+          <mxGeometry height="28" width="176" x="1226" y="576" as="geometry" />
         </mxCell>
         <mxCell id="stack-box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;arcSize=8;" value="" vertex="1">
-          <mxGeometry height="200" width="200" x="1160" y="650" as="geometry" />
+          <mxGeometry height="200" width="200" x="1214" y="656" as="geometry" />
         </mxCell>
         <mxCell id="stack-title" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontSize=13;" value="&lt;b&gt;Tech Stack (Offline)&lt;/b&gt;" vertex="1">
-          <mxGeometry height="24" width="200" x="1160" y="660" as="geometry" />
+          <mxGeometry height="24" width="200" x="1214" y="666" as="geometry" />
         </mxCell>
         <mxCell id="st1" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" value="&amp;nbsp;LLM: Ollama (qwen3.5)" vertex="1">
-          <mxGeometry height="22" width="176" x="1172" y="692" as="geometry" />
+          <mxGeometry height="22" width="176" x="1226" y="698" as="geometry" />
         </mxCell>
         <mxCell id="st2" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" value="Embeddings: sentence-transformers" vertex="1">
-          <mxGeometry height="22" width="176" x="1172" y="716" as="geometry" />
+          <mxGeometry height="22" width="176" x="1226" y="722" as="geometry" />
         </mxCell>
         <mxCell id="st3" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" value="Vector DB: ChromaDB" vertex="1">
-          <mxGeometry height="22" width="176" x="1172" y="740" as="geometry" />
+          <mxGeometry height="22" width="176" x="1226" y="746" as="geometry" />
         </mxCell>
         <mxCell id="st4" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" value="Orchestration: LangGraph" vertex="1">
-          <mxGeometry height="22" width="176" x="1172" y="764" as="geometry" />
+          <mxGeometry height="22" width="176" x="1226" y="770" as="geometry" />
         </mxCell>
         <mxCell id="st5" parent="1" style="text;html=1;strokeColor=none;fillColor=none;align=left;fontSize=11;" value="&amp;nbsp;Storage: JSON files" vertex="1">
-          <mxGeometry height="22" width="176" x="1172" y="788" as="geometry" />
+          <mxGeometry height="22" width="176" x="1226" y="794" as="geometry" />
         </mxCell>
         <mxCell id="e1" edge="1" parent="1" source="in-patient" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.2;entryY=0;entryDx=0;entryDy=0;" target="n1" value="">
           <mxGeometry relative="1" as="geometry">
@@ -104,7 +115,7 @@
         <mxCell id="e2" edge="1" parent="1" source="in-labs" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="n1" value="">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="490" y="270" />
+              <mxPoint x="420" y="270" />
               <mxPoint x="250" y="270" />
             </Array>
           </mxGeometry>
@@ -129,30 +140,32 @@
         <mxCell id="e7" edge="1" parent="1" source="n3" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;fontStyle=2;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="n4" value="raw LLM output">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="830" y="580" />
-              <mxPoint x="790" y="580" />
-              <mxPoint x="790" y="660" />
-              <mxPoint x="640" y="660" />
-              <mxPoint x="640" y="718" />
+              <mxPoint x="994" y="586" />
+              <mxPoint x="844" y="586" />
+              <mxPoint x="844" y="720" />
+              <mxPoint x="694" y="720" />
+              <mxPoint x="694" y="733" />
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="e8" edge="1" parent="1" source="n4" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;fontStyle=2;" target="output" value="structured JSON">
-          <mxGeometry relative="1" as="geometry" />
+        <mxCell id="e8" edge="1" parent="1" source="n4" style="edgeStyle=orthogonalEdgeStyle;html=1;fontSize=10;fontStyle=2;" value="structured JSON">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="574.0000000000002" y="946" as="targetPoint" />
+          </mxGeometry>
         </mxCell>
         <mxCell id="e9" edge="1" parent="1" source="llm" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;fontSize=10;fontStyle=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="n2" value="invoke">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="620" y="570" />
-              <mxPoint x="520" y="570" />
+              <mxPoint x="670" y="636" />
+              <mxPoint x="670" y="556" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="e10" edge="1" parent="1" source="llm" style="edgeStyle=orthogonalEdgeStyle;html=1;dashed=1;fontSize=10;fontStyle=2;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="n3" value="invoke">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
-              <mxPoint x="960" y="580" />
-              <mxPoint x="830" y="580" />
+              <mxPoint x="1014" y="586" />
+              <mxPoint x="994" y="586" />
             </Array>
           </mxGeometry>
         </mxCell>

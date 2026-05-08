@@ -1,14 +1,11 @@
-"""
-ingest.py — chunk triage_protocol.md and load into ChromaDB
-Run this ONCE before main.py
-"""
+
 import os, re, chromadb
 os.environ["TRANSFORMERS_OFFLINE"] = "1"
 os.environ["HF_DATASETS_OFFLINE"] = "1"
 
 from sentence_transformers import SentenceTransformer
 
-PROTOCOL_PATH = "../participants/protocols/triage_protocol.md"
+PROTOCOL_PATH = "D:/projects/MedAI/participants/protocols/triage_protocol.md"
 DB_PATH       = "./chroma_db"
 
 def chunk_protocol(path: str) -> list[dict]:
@@ -35,7 +32,7 @@ def main():
 
     print("Chunking protocol...")
     chunks = chunk_protocol(PROTOCOL_PATH)
-    print(f"   → {len(chunks)} chunks")
+    print(f"{len(chunks)} chunks")
     for c in chunks:
         print(f"      [{c['id']}] {c['title'][:60]}")
 
@@ -64,7 +61,7 @@ def main():
     )
     print("\nSanity query: 'septic shock lactate'")
     for doc, meta in zip(result["documents"][0], result["metadatas"][0]):
-        print(f"   ✓ {meta['title']}: {doc[:80]}...")
+        print(f"{meta['title']}: {doc[:80]}...")
 
 if __name__ == "__main__":
     main()
